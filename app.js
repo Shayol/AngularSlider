@@ -34,14 +34,26 @@ sliderApp.service('imageService', function() {
 });
 
 sliderApp.controller('SliderR', function($scope, $timeout, imageService) {
-  $scope.images = imageService.getImages();
-
-  // $scope.add_photo = function(){
-  //       imageService.addImage({src: 'img/img6.jpg', id: 6});
-  //   };
+  $scope.images = [{
+  src: 'img/img1.png',
+    id: 1
+  }, {
+    src: 'img/img2.jpg',
+    id: 2
+  }, {
+    src: 'img/img3.jpg',
+    id: 3
+  }, {
+    src: 'img/img4.png',
+    id: 4
+  }, {
+    src: 'img/img5.png',
+    id: 5
+  }];
 
   $scope.add_photo = function(){
-     $scope.images.push({src: 'img/img6.jpg', id: 6});
+    imageService.addImage({src: 'img/img6.jpg', id: 6});
+    $scope.images.push({src: 'img/img6.jpg', id: 6});
     };
 
   $scope.shuffle = function(){
@@ -49,14 +61,6 @@ sliderApp.controller('SliderR', function($scope, $timeout, imageService) {
       return $scope.images;
   };
 
-  // $scope.random = '';
-  // $scope.shuffle = function(){
-  //   $scope.random = 0.5 - Math.random();
-  // };
-
-//   $scope.random = function(){
-//     return 0.5 - Math.random();
-// };
 
   $scope.currentIndex = 0; // Initially the index is at the first image
 
@@ -95,11 +99,26 @@ sliderApp.controller('SliderR', function($scope, $timeout, imageService) {
 });
 
 sliderApp.controller('SliderL', function($scope, $timeout, imageService) {
-  $scope.images = imageService.getImages();
+  $scope.images = [{
+  src: 'img/img1.png',
+    id: 1
+  }, {
+    src: 'img/img2.jpg',
+    id: 2
+  }, {
+    src: 'img/img3.jpg',
+    id: 3
+  }, {
+    src: 'img/img4.png',
+    id: 4
+  }, {
+    src: 'img/img5.png',
+    id: 5
+  }];
 
-  // $scope.$watch(function () { return imageService.getImages(); }, function (newValue, oldValue) {
-  //       if (newValue !== oldValue) $scope.images = newValue;
-  //   });
+  $scope.$watch(function () { return imageService.getImages(); }, function (newValue, oldValue) {
+       if (newValue !== oldValue) $scope.images.push(newValue.last);
+   });
 
   $scope.add_photo = function(){
         imageService.addImage({src: 'img/img6.jpg', id: 6});
