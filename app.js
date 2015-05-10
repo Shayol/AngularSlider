@@ -27,8 +27,9 @@ sliderApp.controller('SliderR', function($scope, $rootScope, $timeout) {
     //watch for changes of length of images collection and broadcast them to controller SliderL
 
     $scope.$watchCollection('images', function(newVal, oldValue) {
-      if(newVal !== oldValue && newVal.length != oldValue.length)
+      if(newVal.length != oldValue.length){
             $rootScope.$broadcast('addImage', newImage);
+          }
         });
 
     //make collection images random
