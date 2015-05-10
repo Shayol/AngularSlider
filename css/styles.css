@@ -1,4 +1,4 @@
-/*.slide .ng-hide-add,
+.slide .ng-hide-add,
 .slide .ng-hide-remove {
   -webkit-transition: all linear 0.5s;
   -moz-transition: all linear 0.5s;
@@ -13,15 +13,12 @@
 .slide .ng-hide-add,
 .slide .ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
-}*/
+}
 
 * {
   font-family: 'Open Sans', sans-serif;
 }
-/*.center-grey {
-  background: #f2f2f2;
-}
-*/
+
 body {
   padding-bottom: 50px;
 }
@@ -63,7 +60,8 @@ span {
 }
 
 span.active {
-  background: #18BEF1;
+  font-size: 25px;
+  font-color: grey;
 }
 
 button {
