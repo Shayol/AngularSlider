@@ -18,14 +18,14 @@
 
   <div ng-controller="SliderR">
     <div ng-include src="'template/slider.html'"></div>
-      <div class="row">
+      <div class="row" style="position:relative; bottom: -300px;">
         <div class="col-md-6 col-md-offset-3">
           <button ng-click="add_photo()" class="btn btn-info">Add photo</button>
       </div>
     </div>
   </div>
 
-  <div ng-controller="SliderL">
+  <div ng-controller="SliderL" style="position:relative; top: 300px;">
     <div ng-include src="'template/slider.html'"></div>
   </div>
 

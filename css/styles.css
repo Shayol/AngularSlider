@@ -1,17 +1,17 @@
-.slide .ng-hide-add,
-.slide .ng-hide-remove {
+.slide.ng-hide-add,
+.slide.ng-hide-remove {
   -webkit-transition: all linear 0.5s;
   -moz-transition: all linear 0.5s;
   -o-transition: all linear 0.5s;
   transition: all linear 0.5s;
   display: block!important;
 }
-.slide .ng-hide-add.ng-hide-add-active,
-.slide .ng-hide-remove {
+.slide.ng-hide-add.ng-hide-add-active,
+.slide.ng-hide-remove {
   opacity: 0;
 }
-.slide .ng-hide-add,
-.slide .ng-hide-remove.ng-hide-remove-active {
+.slide.ng-hide-add,
+.slide.ng-hide-remove.ng-hide-remove-active {
   opacity: 1;
 }
 
@@ -36,7 +36,9 @@ h1 {
   width: 610px;
   margin: auto;
   overflow: auto;
+  position: absolute;
 }
+
 .arrows {
   position: absolute;
   top: 10px;
@@ -61,7 +63,6 @@ span {
 
 span.active {
   font-size: 25px;
-  font-color: grey;
 }
 
 button {
