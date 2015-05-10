@@ -12,81 +12,24 @@
 </head>
 
 <body>
-  <div class="container">
+<div class="container">
 
   <h1>Slider Using AngularJS</h1>
 
-<div ng-controller="SliderR">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="slide">
-        <div ng-repeat="image in images track by image.id" ng-show="isCurrentSlideIndex($index)">
-          <img ng-src="{{image.src}}" />
-        </div>
-      </div>
-      <div class="arrows">
-        <a href="#" ng-click="prev()">
-          <img src="img/left-arrow.png"/>
-        </a>
-        <a href="#" ng-click="next()">
-          <img src="img/right-arrow.png"/>
-        </a>
+  <div ng-controller="SliderR">
+    <div ng-include src="'template/slider.html'"></div>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <button ng-click="add_photo()" class="btn btn-info">Add photo</button>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 navigation text-center">
-      <span ng-repeat="image in images track by image.id" ng-class="{active: isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index)">●</span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <button ng-click="shuffle()">shuffle</button>
-    </div>
-  </div>
-
-    <div class="row">
-
-      <div class="col-md-6 col-md-offset-3">
-
-        <button ng-click="add_photo()" class="btn btn-info">Add photo</button>
-
-      </div>
-
-    </div>
-</div>
 
   <div ng-controller="SliderL">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="slide">
-        <div ng-repeat="image in images track by image.id" ng-show="isCurrentSlideIndex($index)">
-          <img ng-src="{{image.src}}" />
-        </div>
-      </div>
-      <div class="arrows">
-        <a href="#" ng-click="prev()">
-          <img src="img/left-arrow.png"/>
-        </a>
-        <a href="#" ng-click="next()">
-          <img src="img/right-arrow.png"/>
-        </a>
-      </div>
-    </div>
+    <div ng-include src="'template/slider.html'"></div>
   </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3 navigation text-center">
-      <span ng-repeat="image in images track by image.id" ng-class="{active: isCurrentSlideIndex($index)}" ng-click="setCurrentSlideIndex($index)">●</span>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <button ng-click="shuffle()">shuffle</button>
-    </div>
-  </div>
-</div>
 
-  </div>
+</div>
 
 </body>
 </html>
