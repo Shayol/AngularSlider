@@ -5,8 +5,7 @@
 </div>
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <img ng-repeat="image in images track by image.id" ng-show="isCurrentSlideIndex($index)" ng-src="{{image.src}}" class="slide">
-  </div>
+    <img ng-repeat="image in images track by image.id" ng-show="isCurrentSlideIndex($index)" ng-src="{{image.src}}" class="slide" />
   </div>
 </div>
 <div class="row" style="position:relative; top: 330px;">

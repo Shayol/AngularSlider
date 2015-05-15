@@ -39,15 +39,6 @@ h1 {
   position: absolute;
 }
 
-.arrows {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-.arrows img {
-  height: 32px;
-}
-
 .navigation {
   padding: 30px;
 }
