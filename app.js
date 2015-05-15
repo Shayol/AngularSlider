@@ -27,7 +27,7 @@ sliderApp.factory('sliderService', function(){
   }
 });
 
-sliderApp.controller('SliderR', function($scope, $rootScope, $timeout, sliderService) {
+sliderApp.controller('SliderR', function($scope, $rootScope, $interval, sliderService) {
   sliderService.initialize($scope);
 
   $scope.images = [{
@@ -65,22 +65,10 @@ sliderApp.controller('SliderR', function($scope, $rootScope, $timeout, sliderSer
 
   // timer
 
-  var timer;
-  var sliderFunc = function() {
-    timer = $timeout(function() {
-      // reverse the order
-      $scope.next();
-      timer = $timeout(sliderFunc, 5000);
-    }, 5000);
-  };
-
-  sliderFunc();
-  $scope.$on('$destroy', function() {
-    $timeout.cancel(timer);
-  });
+  $interval( function(){ $scope.next(); }, 5000);
 });
 
-sliderApp.controller('SliderL', function($scope, $timeout, sliderService) {
+sliderApp.controller('SliderL', function($scope, $timeout, $interval, sliderService) {
   sliderService.initialize($scope);
 
   $scope.images = [{
@@ -110,17 +98,5 @@ sliderApp.controller('SliderL', function($scope, $timeout, sliderService) {
 
     // timer
 
-  var timer;
-  var sliderFunc = function() {
-    timer = $timeout(function() {
-      // reverse the order
-      $scope.prev();
-      timer = $timeout(sliderFunc, 5000);
-    }, 5000);
-  };
-
-  sliderFunc();
-  $scope.$on('$destroy', function() {
-    $timeout.cancel(timer);
-  });
+  $interval( function(){ $scope.prev(); }, 5000);
 });
